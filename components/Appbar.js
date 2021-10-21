@@ -55,6 +55,7 @@ const useStyles = makeStyles((lato) => ({
     alignItems: "center",
     margin: 0,
     border: "1px black solid",
+    height: "55px",
   },
   logo: {
     marginRight: heebo.spacing(2),
@@ -95,6 +96,7 @@ const useStyles = makeStyles((lato) => ({
       backgroundColor: "#F29559",
       color: "#000000",
     },
+    margin: "0px",
   },
 }));
 
@@ -103,7 +105,7 @@ export default function SimpleBar() {
 
   return (
     <div className={classes.root}>
-      <ThemeProvider theme={heebo}>
+      <ThemeProvider theme={lato}>
         <AppBar
           className={classes.appbar}
           elevation={0}
@@ -116,7 +118,7 @@ export default function SimpleBar() {
                 className={classes.button}
                 style={{ borderRadius: "2px" }}
               >
-                <Typography variant="h6" style={{ fontWeight: 500 }}>
+                <Typography variant="h8" style={{ fontWeight: 700 }}>
                   Homepage
                 </Typography>
               </Button>
@@ -127,7 +129,7 @@ export default function SimpleBar() {
                 className={classes.button2}
                 style={{ borderRadius: "2px" }}
               >
-                <Typography variant="h6" style={{ fontWeight: 500 }}>
+                <Typography variant="h8" style={{ fontWeight: 700 }}>
                   Services
                 </Typography>
               </Button>
@@ -138,7 +140,7 @@ export default function SimpleBar() {
                 className={classes.button1}
                 style={{ borderRadius: "2px" }}
               >
-                <Typography variant="h6" style={{ fontWeight: 500 }}>
+                <Typography variant="h8" style={{ fontWeight: 700 }}>
                   Workshops
                 </Typography>
               </Button>
@@ -149,7 +151,7 @@ export default function SimpleBar() {
                 className={classes.button3}
                 style={{ borderRadius: "2px" }}
               >
-                <Typography variant="h6" style={{ fontWeight: 500 }}>
+                <Typography variant="h8" style={{ fontWeight: 700 }}>
                   Contact
                 </Typography>
               </Button>
@@ -160,7 +162,7 @@ export default function SimpleBar() {
                 className={classes.button}
                 style={{ borderRadius: "2px" }}
               >
-                <Typography variant="h6" style={{ fontWeight: 500 }}>
+                <Typography variant="h8" style={{ fontWeight: 700 }}>
                   About
                 </Typography>
               </Button>

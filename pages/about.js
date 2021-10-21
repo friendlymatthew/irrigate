@@ -2,7 +2,17 @@ import React from "react";
 import "typeface-heebo";
 import "typeface-lato";
 import Appbar from "../components/Appbar";
-import { Grid, Button, Paper, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from "@material-ui/core";
+import {
+  Grid,
+  Button,
+  Paper,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@material-ui/core";
 import {
   ThemeProvider,
   createTheme,
@@ -78,12 +88,11 @@ export default function ServicePage() {
           <Grid item xs={8} container spacing={3}>
             <Grid item xs={12}>
               <ThemeProvider theme={lato}>
-                <Typography variant="h6" style={{ textAlign: "center", fontWeight: 600}}>
-                  About
+                <Typography variant="h5" style={{ fontWeight: 600 }}>
+                  Matthew is a customer
                 </Typography>
               </ThemeProvider>
             </Grid>
-            
           </Grid>
           <Grid item xs={2}></Grid>
         </Grid>

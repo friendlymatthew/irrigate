@@ -67,6 +67,10 @@ const useStyles = makeStyles((scaffold) => ({
     minHeight: 0,
     minWidth: 0,
   },
+  art: {
+    margin: 0,
+    marginTop: 0,
+  },
 }));
 
 export default function Home() {
@@ -77,46 +81,48 @@ export default function Home() {
       <ThemeProvider theme={scaffold}>
         <Grid container spacing={6}>
           <Grid item xs={12}>
-            <Appbar />
+            <Appbar style={{ margin: "0px" }} />
+          </Grid>
+
+          <Grid style={{ margin: "0px" }} item xs={12}>
+            <Image
+              className={classes.art}
+              src="/redrock.png"
+              height={980}
+              priority={true}
+              width={1920}
+              margin="0px"
+            />
           </Grid>
 
           <Grid item xs={2}></Grid>
 
-          <Grid item xs={8} container spacing={4}>
-            <Grid item xs={6}>
-              <ThemeProvider theme={heebo}>
-                <Typography
-                  color="primary"
-                  variant="h3"
-                  style={{ fontWeight: 600 }}
-                >
-                  Irrigate your local business online
-                </Typography>
-              </ThemeProvider>
-            </Grid>
-            <Grid item xs={6}></Grid>
-
+          <Grid item xs={8} container spacing={14}>
             <Grid item xs={6}>
               <Paper className={classes.paper} elevation={0}>
                 <ThemeProvider theme={lato}>
                   <Typography
                     color="primary"
-                    variant="h5"
+                    variant="h3"
                     style={{ fontWeight: 600, marginBottom: "5px" }}
                   >
                     Start reaching more customers online
                   </Typography>
+                  <br />
                 </ThemeProvider>
                 <ThemeProvider theme={lato}>
-                  <Typography>
-                    Set up a custom website for online engagement. Sell retail
-                    products, manage appointment bookings, or integrate other
-                    ways to scale your business.
+                  <Typography color="primary" variant="h6">
+                    <div>Set up a custom website for online engagement.</div>
+                    <div>
+                      Sell retail products, manage appointment bookings,{" "}
+                    </div>{" "}
+                    <div>or integrate other ways to scale your business.</div>
                   </Typography>
+                  <br />
                   <Link href="/services">
                     <Button
                       color="secondary"
-                      style={{ fontWeight: 600 }}
+                      style={{ fontWeight: 600, fontSize: "16px" }}
                       className={classes.button}
                     >
                       View our solutions
@@ -126,32 +132,59 @@ export default function Home() {
               </Paper>
             </Grid>
 
-            <Grid item xs={6}>
-              <Paper className={classes.artpaper}></Paper>
+            <Grid item xs={6} style={{ marginBottom: "20px" }}>
+              <Paper
+                style={{
+                  backgroundColor: "#000000",
+                  height: "362px",
+                  width: "512px",
+                  borderRadius: "20px",
+                }}
+              ></Paper>
             </Grid>
 
-            <Grid item xs={6}></Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} style={{ height: "80px" }}></Grid>
+            <Grid
+              style={{ marginTop: "20px", marginBottom: "20px" }}
+              item
+              xs={6}
+            >
+              <Paper
+                style={{
+                  backgroundColor: "#000000",
+                  height: "362px",
+                  width: "512px",
+                  borderRadius: "20px",
+                }}
+              ></Paper>
+            </Grid>
+            <Grid
+              style={{ marginTop: "20px", marginBottom: "20px" }}
+              item
+              xs={6}
+            >
               <Paper className={classes.paper} elevation={0}>
                 <ThemeProvider theme={lato}>
                   <Typography
                     color="primary"
-                    variant="h5"
+                    variant="h3"
                     style={{ fontWeight: 600 }}
                   >
                     Discover more customers
                   </Typography>
+                  <br />
                 </ThemeProvider>
                 <ThemeProvider theme={lato}>
-                  <Typography>
+                  <Typography color="primary" variant="h6">
                     Attract and engage with customers through social media
                     platforms. Improve search engine results through Google
                     Business.
                   </Typography>
+                  <br />
                   <Link href="/services">
                     <Button
                       color="secondary"
-                      style={{ fontWeight: 600 }}
+                      style={{ fontWeight: 600, fontSize: "16px" }}
                       className={classes.button}
                     >
                       View our solutions
@@ -161,27 +194,37 @@ export default function Home() {
               </Paper>
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item xs={12} style={{ height: "80px" }}></Grid>
+
+            <Grid style={{ marginTop: "20px" }} item xs={6}>
               <Paper className={classes.paper} elevation={0}>
                 <ThemeProvider theme={lato}>
                   <Typography
                     color="primary"
-                    variant="h5"
+                    variant="h3"
                     style={{ fontWeight: 600 }}
                   >
-                    Take control of your future
+                    <div>Take control </div>
+                    <div>of your future</div>
                   </Typography>
+                  <br />
                 </ThemeProvider>
                 <ThemeProvider theme={lato}>
-                  <Typography>
-                    Learn how to navigate the internet for your business. Attend
-                    topic-based workshops like e-commerce management, email
-                    management, social media 101, and many more.
+                  <Typography color="primary" variant="h6">
+                    <div>
+                      Learn how to navigate the internet for your business.
+                    </div>
+                    <div>Attend topic-based workshops like e-commerce</div>
+                    <div>
+                       management, email management, social media 101,
+                    </div>
+                    <div>and many more.</div>
                   </Typography>
+                  <br />
                   <Link href="/workshops">
                     <Button
                       color="secondary"
-                      style={{ fontWeight: 600 }}
+                      style={{ fontWeight: 600, fontSize: "16px" }}
                       className={classes.button}
                     >
                       Browse workshops
@@ -191,70 +234,115 @@ export default function Home() {
               </Paper>
             </Grid>
 
-            <Grid item xs={6}></Grid>
-
-            <Grid item xs={12}>
+            <Grid style={{ marginTop: "20px" }} item xs={6}>
               <Paper
-                elevation={0}
-                className={classes.paper}
-                style={{ textAlign: "center" }}
-              >
-                <ThemeProvider theme={heebo}>
-                  <Typography variant="h4" style={{ fontWeight: 700 }}>
-                    Our Mission
-                  </Typography>
-                </ThemeProvider>
-                <ThemeProvider theme={lato}>
-                  <Typography variant="h6">
-                    We are devoted to helping local businesses curate their
-                    online prescence in hopes of improving their business. Lorem
-                    ipsum on some bullshit, yadayadad yada whatevers
-                  </Typography>
-                  <Link href="/about">
-                    <Button
-                      color="secondary"
-                      style={{ fontWeight: 600 }}
-                      className={classes.button}
-                    >
-                      Learn more about us
-                    </Button>
-                  </Link>
-                </ThemeProvider>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12}>
-              <Paper
-                elevation={0}
-                className={classes.paper}
-                style={{ textAlign: "center" }}
-              >
-                <ThemeProvider theme={heebo}>
-                  <Typography variant="h4" style={{ fontWeight: 700 }}>
-                    Workshops
-                  </Typography>
-                </ThemeProvider>
-                <ThemeProvider theme={lato}>
-                  <Typography variant="h6">
-                    We want business owners to take full ownership of their
-                    business, including their online business. We offer
-                    educational workshops for all different skill levels.
-                  </Typography>
-                  <Link href="/workshops">
-                    <Button
-                      color="secondary"
-                      style={{ fontWeight: 600 }}
-                      className={classes.button}
-                    >
-                      Learn more about workshops
-                    </Button>
-                  </Link>
-                </ThemeProvider>
-              </Paper>
+                style={{
+                  backgroundColor: "#000000",
+                  height: "362px",
+                  borderRadius: "20px",
+                  width: "512px",
+                }}
+              ></Paper>
             </Grid>
           </Grid>
 
           <Grid item xs={2}></Grid>
+
+          <Grid item xs={12}>
+            <Image
+              className={classes.art}
+              src="/redrock.png"
+              height={900}
+              width={1920}
+            />
+          </Grid>
+
+          <Grid item xs={12}>
+            <Paper
+              elevation={0}
+              className={classes.paper}
+              style={{ textAlign: "center" }}
+            >
+              <ThemeProvider theme={heebo}>
+                <Typography variant="h3" style={{ fontWeight: 700 }}>
+                  Our Mission
+                </Typography>
+              </ThemeProvider>
+              <br />
+              <ThemeProvider theme={lato}>
+                <Typography variant="h6">
+                  <div>
+                    We are devoted to helping local businesses curate their
+                    online prescence in hopes of improving their business.
+                  </div>
+                  <div>
+                    {" "}
+                    Lorem ipsum on some bullshit, yadayadad yada whatevers
+                  </div>
+                </Typography>
+                <br />
+                <Link href="/about">
+                  <Button
+                    color="secondary"
+                    style={{ fontWeight: 600, fontSize: "16px" }}
+                    className={classes.button}
+                  >
+                    Learn more about us
+                  </Button>
+                </Link>
+              </ThemeProvider>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={12}>
+            <Image
+              className={classes.art}
+              src="/redrock.png"
+              height={900}
+              width={1920}
+            />
+          </Grid>
+
+          <Grid item xs={12}>
+            <Paper
+              elevation={0}
+              className={classes.paper}
+              style={{ textAlign: "center" }}
+            >
+              <ThemeProvider theme={heebo}>
+                <Typography variant="h3" style={{ fontWeight: 700 }}>
+                  Workshops
+                </Typography>
+                <br />
+              </ThemeProvider>
+              <ThemeProvider theme={lato}>
+                <Typography variant="h6">
+                  We want business owners to take full ownership of their
+                  business, including their online business. We offer
+                  educational workshops for all different skill levels.
+                </Typography>
+                <br />
+                <Link href="/workshops">
+                  <Button
+                    color="secondary"
+                    style={{ fontWeight: 600, fontSize: "16px" }}
+                    className={classes.button}
+                  >
+                    Learn more about workshops
+                  </Button>
+                </Link>
+              </ThemeProvider>
+            </Paper>
+          </Grid>
+
+          <Grid item xs={12}>
+            <Image
+              className={classes.art}
+              src="/redrock.png"
+              height={900}
+              width={1920}
+            />
+          </Grid>
 
           <Footer />
         </Grid>
