@@ -1,8 +1,7 @@
 import React from "react";
-import Link from "next/link";
 import "typeface-heebo";
 import "typeface-lato";
-import Appbar from "../components/Appbar";
+import Appbar from "../../components/Appbar";
 import {
   Grid,
   Button,
@@ -20,6 +19,8 @@ import {
   makeStyles,
 } from "@material-ui/core/styles";
 import "typeface-aleo";
+import WorkshopCard from "../../components/WorkshopCard"
+import WorkshopSmall from "../../components/WorkshopSmall"
 
 const aleo = createTheme({
   typography: {
@@ -37,6 +38,7 @@ const aleo = createTheme({
     },
   },
 });
+
 const heebo = createTheme({
   typography: {
     fontFamily: ["Heebo", "sans-serif"].join(","),
@@ -106,13 +108,47 @@ export default function ServicePage() {
           <Grid item xs={8} container spacing={3}>
             <Grid item xs={12}>
               <ThemeProvider theme={aleo}>
-                <Typography variant="h5" style={{ fontWeight: 600 }}>
-                    Email <a href="mailto:mkim04@wesleyan.edu" style={{ color: "#2064f4"}}>mkim04@wesleyan.edu</a> to schedule a meeting.
-
-                  </Typography>
+                <Typography variant="h6">
+                  We strive to educate blah blah blah
+                </Typography>
               </ThemeProvider>
             </Grid>
-            
+
+            <ThemeProvider theme={lato}>
+              <Grid
+                item
+                xs={8}
+                style={{ marginRight: "0px", border: "2px solid #10162F" }}
+              
+              >
+                <div>
+                <Typography variant="h6" style={{ textAlign: "center", marginLeft: "5px", fontWeight: 700 }}>
+                  Upcoming Workshop
+                </Typography>
+                </div>
+                <br />
+                <div>
+                  <WorkshopCard />
+                </div>
+              </Grid>
+              <Grid
+                item
+                xs={4}
+                style={{ backgroundColor: "#10162f", marginLeft: "0px", border: "2px solid #10162F" }}
+               
+              >
+                <div>
+                <Typography variant="h6" style={{ color: "#FFFFFF", textAlign: "center", marginLeft: "5px", fontWeight: 700 }}>
+                  Past Workshops
+                </Typography>
+                </div>
+                <br />
+                <div>
+                <WorkshopSmall />
+                </div>
+
+              </Grid>
+            </ThemeProvider>
           </Grid>
           <Grid item xs={2}></Grid>
         </Grid>

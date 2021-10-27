@@ -9,6 +9,25 @@ import {
   makeStyles,
 } from "@material-ui/core/styles";
 
+import "typeface-aleo";
+
+const aleo = createTheme({
+  typography: {
+    fontFamily: ["Aleo", "serif"].join(","),
+    button: {
+      textTransform: "none",
+    },
+  },
+  palette: {
+    primary: {
+      main: "#1B1811",
+    },
+    secondary: {
+      main: "#2064f4",
+    },
+  },
+});
+
 const heebo = createTheme({
   typography: {
     fontFamily: ["Heebo", "sans-serif"].join(","),
@@ -69,23 +88,170 @@ export default function FooterPage() {
 
   return (
     <div>
-      <ThemeProvider theme={scaffold}>
-          <Grid container spacing={3}>
-              <Grid item xs={1}>
-                </Grid>
-
-                <Grid item xs={5}>
-                    <Paper>
-                        <Typography>
-                            hi
-                        </Typography>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={5}> <Typography>hi</Typography> </Grid>
-                <Grid item xs={1}></Grid>
+      <Grid
+        item
+        xs={12}
+        container spacing={4}
+        style={{ margin: "0px", backgroundColor: "#10162F" }}
+      >
+        <Grid item xs={2}></Grid>
+        <Grid item xs={2}>
+          <Grid item xs={12} style={{ marginBottom: "0px" }}>
+            <ThemeProvider theme={aleo}>
+              <Typography
+                variant="h6"
+                style={{ color: "#FFFFFF", fontWeight: 700 }}
+              >
+                Initiative
+              </Typography>
+              <br></br>
+            </ThemeProvider>
           </Grid>
-      </ThemeProvider>
+          <Grid item xs={12} style={{ marginTop: "0px" }}>
+            <ThemeProvider theme={aleo}>
+              <div style={{ marginTop: "20px" }}>
+                <Typography
+                  variant="h8"
+                  style={{ color: "#FFFFFF", fontWeight: 600 }}
+                >
+                  About
+                </Typography>
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                <Typography
+                  variant="h8"
+                  style={{ color: "#FFFFFF", fontWeight: 600 }}
+                >
+                  Contact
+                </Typography>
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                <Typography
+                  variant="h8"
+                  style={{ color: "#FFFFFF", fontWeight: 600 }}
+                >
+                  Services
+                </Typography>
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                <Typography
+                  variant="h8"
+                  style={{ color: "#FFFFFF", fontWeight: 600 }}
+                >
+                  Workshops
+                </Typography>
+              </div>
+            </ThemeProvider>
+          </Grid>
+        </Grid>
+        <Grid item xs={2}>
+          <ThemeProvider theme={aleo}>
+            <div>
+              <Typography
+                variant="h6"
+                style={{ color: "#FFFFFF", fontWeight: 700 }}
+              >
+                Resources
+              </Typography>
+            </div>
+            <br />
+            <div style={{ marginTop: "20px" }}>
+              <Typography
+                variant="h8"
+                style={{ color: "#FFFFFF", fontWeight: 600 }}
+              >
+                Past Workshops
+              </Typography>
+            </div>
+            <div style={{ marginTop: "20px" }}>
+              <Typography
+                variant="h8"
+                style={{ color: "#FFFFFF", fontWeight: 600 }}
+              >
+                Past Projects
+              </Typography>
+            </div>
+          </ThemeProvider>
+        </Grid>
+        <Grid item xs={2}>
+          <ThemeProvider theme={aleo}>
+            <div>
+              <Typography
+                variant="h6"
+                style={{ color: "#FFFFFF", fontWeight: 700 }}
+              >
+                Jobs
+              </Typography>
+            </div>
+            <br />
+            <div style={{ marginTop: "20px" }}>
+              <Typography
+                variant="h8"
+                style={{ color: "#FFFFFF", fontWeight: 600 }}
+              >
+                Openings
+              </Typography>
+            </div>
+            <div style={{ marginTop: "20px" }}>
+              <Typography
+                variant="h8"
+                style={{ color: "#FFFFFF", fontWeight: 600 }}
+              >
+                Application
+              </Typography>
+            </div>
+          </ThemeProvider>
+        </Grid>
+        <Grid item xs={4} container spacing={4}>
+          <Grid
+            item
+            xs={12}
+            style={{
+              height: "10px",
+              marginBottom: "80px",
+            }}
+          >
+            <ThemeProvider theme={aleo}>
+              <div>
+                <Typography
+                  variant="h6"
+                  style={{
+                    color: "#FFFFFF",
+                    textAlign: "center",
+                    fontWeight: 600,
+                  }}
+                >
+                  Everybody deserves to be online.
+                </Typography>
+              </div>
+              <br />
+              <div>
+                <Typography
+                  variant="h6"
+                  style={{
+                    color: "#FFFFFF",
+                    textAlign: "center",
+                    fontWeight: 600,
+                  }}
+                >
+                  Interested in funding?
+                </Typography>
+              </div>
+            </ThemeProvider>
+            <ThemeProvider theme={lato}>
+              <div style={{ marginTop: "10px", textAlign: "center" }}>
+                <Button
+                  style={{ textAlign: "center", backgroundColor: "#FED66D" }}
+                >
+                  <Typography style={{ color: "#10162F", fontWeight: 700 }}>
+                    Contact
+                  </Typography>
+                </Button>
+              </div>
+            </ThemeProvider>
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 }

@@ -12,6 +12,24 @@ import {
   makeStyles,
 } from "@material-ui/core/styles";
 
+import "typeface-aleo";
+
+const aleo = createTheme({
+  typography: {
+    fontFamily: ["Aleo", "serif"].join(","),
+    button: {
+      textTransform: "none",
+    },
+  },
+  palette: {
+    primary: {
+      main: "#1B1811",
+    },
+    secondary: {
+      main: "#2064f4",
+    },
+  },
+});
 const heebo = createTheme({
   typography: {
     fontFamily: ["Heebo", "sans-serif"].join(","),
@@ -42,7 +60,7 @@ const lato = createTheme({
       main: "#1B1811",
     },
     secondary: {
-      main: "#FFFFFF",
+      main: "#fff0e5",
     },
   },
 });
@@ -54,8 +72,7 @@ const useStyles = makeStyles((lato) => ({
   appbar: {
     alignItems: "center",
     margin: 0,
-    border: "1px black solid",
-    height: "55px",
+    height: "58px",
   },
   logo: {
     marginRight: heebo.spacing(2),
@@ -67,7 +84,7 @@ const useStyles = makeStyles((lato) => ({
   button1: {
     marginLeft: "30px",
     marginRight: "30px",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#fff0e5",
     "&:hover": {
       backgroundColor: "#F29559",
       color: "#000000",
@@ -75,7 +92,7 @@ const useStyles = makeStyles((lato) => ({
   },
   button2: {
     marginLeft: "30px",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#fff0e5",
     "&:hover": {
       backgroundColor: "#F29559",
       color: "#000000",
@@ -83,7 +100,7 @@ const useStyles = makeStyles((lato) => ({
   },
   button3: {
     marginRight: "30px",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#fff0e5",
     "&:hover": {
       backgroundColor: "#F29559",
       color: "#000000",
@@ -91,7 +108,7 @@ const useStyles = makeStyles((lato) => ({
   },
 
   button: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#fff0e5",
     "&:hover": {
       backgroundColor: "#F29559",
       color: "#000000",
@@ -112,62 +129,76 @@ export default function SimpleBar() {
           color="secondary"
           position="static"
         >
-          <Toolbar className={classes.logo} color="secondary">
-            <Link href="/">
-              <Button
-                className={classes.button}
-                style={{ borderRadius: "2px" }}
-              >
-                <Typography variant="h8" style={{ fontWeight: 700 }}>
-                  Homepage
-                </Typography>
-              </Button>
-            </Link>
+          <Grid container spacing={1}>
+            <Grid item xs={2}></Grid>
 
-            <Link href="/services">
-              <Button
-                className={classes.button2}
-                style={{ borderRadius: "2px" }}
-              >
-                <Typography variant="h8" style={{ fontWeight: 700 }}>
-                  Services
+            <Grid item xs={3}>
+              <ThemeProvider theme={lato}>
+                <Typography variant="h6" style={{ marginLeft: "0px", marginTop: "16px", fontWeight: 500 , }}>
+                  LOGO
                 </Typography>
-              </Button>
-            </Link>
+              </ThemeProvider>
+            </Grid>
 
-            <Link href="/workshops">
-              <Button
-                className={classes.button1}
-                style={{ borderRadius: "2px" }}
-              >
-                <Typography variant="h8" style={{ fontWeight: 700 }}>
-                  Workshops
-                </Typography>
-              </Button>
-            </Link>
+            <Grid item xs={7}>
+              <Toolbar className={classes.logo} color="secondary">
+                <Link href="/">
+                  <Button
+                    className={classes.button}
+                    style={{ borderRadius: "2px" }}
+                  >
+                    <Typography variant="h6" style={{ fontWeight: 500  }}>
+                      Homepage
+                    </Typography>
+                  </Button>
+                </Link>
 
-            <Link href="/contact">
-              <Button
-                className={classes.button3}
-                style={{ borderRadius: "2px" }}
-              >
-                <Typography variant="h8" style={{ fontWeight: 700 }}>
-                  Contact
-                </Typography>
-              </Button>
-            </Link>
+                <Link href="/services">
+                  <Button
+                    className={classes.button2}
+                    style={{ borderRadius: "2px" }}
+                  >
+                    <Typography variant="h6" style={{ fontWeight: 500  }}>
+                      Services
+                    </Typography>
+                  </Button>
+                </Link>
 
-            <Link href="/about">
-              <Button
-                className={classes.button}
-                style={{ borderRadius: "2px" }}
-              >
-                <Typography variant="h8" style={{ fontWeight: 700 }}>
-                  About
-                </Typography>
-              </Button>
-            </Link>
-          </Toolbar>
+                <Link href="/workshops">
+                  <Button
+                    className={classes.button1}
+                    style={{ borderRadius: "2px" }}
+                  >
+                    <Typography variant="h6" style={{ fontWeight: 500  }}>
+                      Workshops
+                    </Typography>
+                  </Button>
+                </Link>
+
+                <Link href="/contact">
+                  <Button
+                    className={classes.button3}
+                    style={{ borderRadius: "2px" }}
+                  >
+                    <Typography variant="h6" style={{ fontWeight: 500 }}>
+                      Contact
+                    </Typography>
+                  </Button>
+                </Link>
+
+                <Link href="/about">
+                  <Button
+                    className={classes.button}
+                    style={{ borderRadius: "2px" }}
+                  >
+                    <Typography variant="h6" style={{ fontWeight: 500 }}>
+                      About
+                    </Typography>
+                  </Button>
+                </Link>
+              </Toolbar>
+            </Grid>
+          </Grid>
         </AppBar>
       </ThemeProvider>
     </div>

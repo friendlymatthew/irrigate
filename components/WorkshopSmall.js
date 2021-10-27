@@ -1,19 +1,10 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
 import "typeface-heebo";
 import "typeface-lato";
 import Appbar from "../components/Appbar";
-import {
-  Grid,
-  Button,
-  Paper,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@material-ui/core";
+import { Grid, Button, Paper, Typography } from "@material-ui/core";
+import Footer from "../components/Footer";
 import {
   ThemeProvider,
   createTheme,
@@ -37,6 +28,7 @@ const aleo = createTheme({
     },
   },
 });
+
 const heebo = createTheme({
   typography: {
     fontFamily: ["Heebo", "sans-serif"].join(","),
@@ -74,7 +66,7 @@ const scaffold = createTheme({
       main: "#1B1811",
     },
     secondary: {
-      main: "#2064f4",
+      main: "#3a10e5",
     },
   },
 });
@@ -90,33 +82,38 @@ const useStyles = makeStyles((scaffold) => ({
     minHeight: 0,
     minWidth: 0,
   },
+  art: {
+    margin: 0,
+    marginTop: 0,
+  },
 }));
 
-export default function ServicePage() {
+export default function WorkshopSmallPage(props) {
   const classes = useStyles();
-
   return (
     <div>
-      <ThemeProvider theme={scaffold}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Appbar />
+      <Grid container spacing={3}>
+        <ThemeProvider theme={aleo}>
+          <Grid item xs={8} style={{ margin: "0px", marginTop: "0px" }}>
+            <Typography
+              variant="h6"
+              style={{ marginLeft: "20px", color: "#FFFFFF", fontWeight: 700 }}
+            >
+              Class Title
+            </Typography>
           </Grid>
-          <Grid item xs={2}></Grid>
-          <Grid item xs={8} container spacing={3}>
-            <Grid item xs={12}>
-              <ThemeProvider theme={aleo}>
-                <Typography variant="h5" style={{ fontWeight: 600 }}>
-                    Email <a href="mailto:mkim04@wesleyan.edu" style={{ color: "#2064f4"}}>mkim04@wesleyan.edu</a> to schedule a meeting.
+        </ThemeProvider>
 
-                  </Typography>
-              </ThemeProvider>
-            </Grid>
-            
+        <ThemeProvider theme={lato}>
+          <Grid item xs={4}>
+            <Button style={{ textAlign: "center", backgroundColor: "#FED66D" }}>
+              <Typography style={{ color: "#10162F", fontWeight: 700 }}>
+                Notes
+              </Typography>
+            </Button>
           </Grid>
-          <Grid item xs={2}></Grid>
-        </Grid>
-      </ThemeProvider>
+        </ThemeProvider>
+      </Grid>
     </div>
   );
 }

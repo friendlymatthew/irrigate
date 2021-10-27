@@ -13,6 +13,26 @@ import {
   createTheme,
   makeStyles,
 } from "@material-ui/core/styles";
+import "typeface-aleo";
+import Sidecard from "../components/Sidecard";
+import Cardside from "../components/Cardside";
+
+const aleo = createTheme({
+  typography: {
+    fontFamily: ["Aleo", "serif"].join(","),
+    button: {
+      textTransform: "none",
+    },
+  },
+  palette: {
+    primary: {
+      main: "#1B1811",
+    },
+    secondary: {
+      main: "#2064f4",
+    },
+  },
+});
 
 const heebo = createTheme({
   typography: {
@@ -51,7 +71,7 @@ const scaffold = createTheme({
       main: "#1B1811",
     },
     secondary: {
-      main: "#2064f4",
+      main: "#3A10E5",
     },
   },
 });
@@ -84,7 +104,24 @@ export default function Home() {
             <Appbar style={{ margin: "0px" }} />
           </Grid>
 
-          <Grid style={{ margin: "0px" }} item xs={12}>
+          <Grid item xs={12} container spacing={3}>
+            <ThemeProvider theme={aleo}>
+              <Grid item xs={2}></Grid>
+              <Grid item xs={8}>
+                <Typography style={{ fontWeight: 700 }} variant="h2">
+                  <div>Middletown </div> <div> Irrigation Initiative </div>
+                </Typography>
+                <Button style={{ margin: "0px", color: "#3a10e5" }}>
+                  <Typography variant="h2" style={{ fontWeight: 700 }}>
+                    Learn more
+                  </Typography>
+                </Button>
+              </Grid>
+              <Grid item xs={2}></Grid>
+            </ThemeProvider>
+          </Grid>
+
+          <Grid style={{ margin: "0px", textAlign: "center" }} item xs={12}>
             <Image
               className={classes.art}
               src="/redrock.png"
@@ -95,158 +132,43 @@ export default function Home() {
             />
           </Grid>
 
-          <Grid item xs={2}></Grid>
+          <Grid
+            item
+            xs={12}
+            container
+            spacing={2}
+            style={{ marginTop: "40px", marginBottom: "40px" }}
+          >
+            <Grid item xs={2}></Grid>
 
-          <Grid item xs={8} container spacing={14}>
-            <Grid item xs={6}>
-              <Paper className={classes.paper} elevation={0}>
-                <ThemeProvider theme={lato}>
-                  <Typography
-                    color="primary"
-                    variant="h3"
-                    style={{ fontWeight: 600, marginBottom: "5px" }}
-                  >
-                    Start reaching more customers online
-                  </Typography>
-                  <br />
-                </ThemeProvider>
-                <ThemeProvider theme={lato}>
-                  <Typography color="primary" variant="h6">
-                    <div>Set up a custom website for online engagement.</div>
-                    <div>
-                      Sell retail products, manage appointment bookings,{" "}
-                    </div>{" "}
-                    <div>or integrate other ways to scale your business.</div>
-                  </Typography>
-                  <br />
-                  <Link href="/services">
-                    <Button
-                      color="secondary"
-                      style={{ fontWeight: 600, fontSize: "16px" }}
-                      className={classes.button}
-                    >
-                      View our solutions
-                    </Button>
-                  </Link>
-                </ThemeProvider>
-              </Paper>
+            <Grid item xs={8} container spacing={14}>
+              <Grid item xs={12} style={{ marginBottom: "20px" }}>
+                <Sidecard
+                  title="Lorem Ipsum"
+                  desc="nd also you solution will only work if the window is opened through window.open. Of'course your answer should not be downvoted as it provides a solution to certain scenarios and is a good addition to the question/answers for future reference"
+                  buttonText="See Dons Bogam New York Middletown"
+                />
+              </Grid>
+
+              <Grid item xs={12} style={{ marginBottom: "20px" }}>
+                <Cardside
+                  title="Lorem Ipsum"
+                  desc="nd also you solution will only work if the window is opened through window.open. Of'course your answer should not be downvoted as it provides a solution to certain scenarios and is a good addition to the question/answers for future reference"
+                  buttonText="See Dons Bogam New York Middletown"
+                />
+              </Grid>
+
+              <Grid item xs={12} style={{ marginBottom: "20px" }}>
+                <Sidecard
+                  title="Lorem Ipsum"
+                  desc="nd also you solution will only work if the window is opened through window.open. Of'course your answer should not be downvoted as it provides a solution to certain scenarios and is a good addition to the question/answers for future reference"
+                  buttonText="See Dons Bogam New York Middletown"
+                />
+              </Grid>
             </Grid>
 
-            <Grid item xs={6} style={{ marginBottom: "20px" }}>
-              <Paper
-                style={{
-                  backgroundColor: "#000000",
-                  height: "362px",
-                  width: "512px",
-                  borderRadius: "20px",
-                }}
-              ></Paper>
-            </Grid>
-
-            <Grid item xs={12} style={{ height: "80px" }}></Grid>
-            <Grid
-              style={{ marginTop: "20px", marginBottom: "20px" }}
-              item
-              xs={6}
-            >
-              <Paper
-                style={{
-                  backgroundColor: "#000000",
-                  height: "362px",
-                  width: "512px",
-                  borderRadius: "20px",
-                }}
-              ></Paper>
-            </Grid>
-            <Grid
-              style={{ marginTop: "20px", marginBottom: "20px" }}
-              item
-              xs={6}
-            >
-              <Paper className={classes.paper} elevation={0}>
-                <ThemeProvider theme={lato}>
-                  <Typography
-                    color="primary"
-                    variant="h3"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Discover more customers
-                  </Typography>
-                  <br />
-                </ThemeProvider>
-                <ThemeProvider theme={lato}>
-                  <Typography color="primary" variant="h6">
-                    Attract and engage with customers through social media
-                    platforms. Improve search engine results through Google
-                    Business.
-                  </Typography>
-                  <br />
-                  <Link href="/services">
-                    <Button
-                      color="secondary"
-                      style={{ fontWeight: 600, fontSize: "16px" }}
-                      className={classes.button}
-                    >
-                      View our solutions
-                    </Button>
-                  </Link>
-                </ThemeProvider>
-              </Paper>
-            </Grid>
-
-            <Grid item xs={12} style={{ height: "80px" }}></Grid>
-
-            <Grid style={{ marginTop: "20px" }} item xs={6}>
-              <Paper className={classes.paper} elevation={0}>
-                <ThemeProvider theme={lato}>
-                  <Typography
-                    color="primary"
-                    variant="h3"
-                    style={{ fontWeight: 600 }}
-                  >
-                    <div>Take control </div>
-                    <div>of your future</div>
-                  </Typography>
-                  <br />
-                </ThemeProvider>
-                <ThemeProvider theme={lato}>
-                  <Typography color="primary" variant="h6">
-                    <div>
-                      Learn how to navigate the internet for your business.
-                    </div>
-                    <div>Attend topic-based workshops like e-commerce</div>
-                    <div>
-                       management, email management, social media 101,
-                    </div>
-                    <div>and many more.</div>
-                  </Typography>
-                  <br />
-                  <Link href="/workshops">
-                    <Button
-                      color="secondary"
-                      style={{ fontWeight: 600, fontSize: "16px" }}
-                      className={classes.button}
-                    >
-                      Browse workshops
-                    </Button>
-                  </Link>
-                </ThemeProvider>
-              </Paper>
-            </Grid>
-
-            <Grid style={{ marginTop: "20px" }} item xs={6}>
-              <Paper
-                style={{
-                  backgroundColor: "#000000",
-                  height: "362px",
-                  borderRadius: "20px",
-                  width: "512px",
-                }}
-              ></Paper>
-            </Grid>
+            <Grid item xs={2}></Grid>
           </Grid>
-
-          <Grid item xs={2}></Grid>
 
           <Grid item xs={12}>
             <Image
@@ -257,13 +179,8 @@ export default function Home() {
             />
           </Grid>
 
-          <Grid item xs={12}>
-            <Paper
-              elevation={0}
-              className={classes.paper}
-              style={{ textAlign: "center" }}
-            >
-              <ThemeProvider theme={heebo}>
+          <Grid item xs={12} style={{ textAlign: "center"}}>
+              <ThemeProvider theme={lato} >
                 <Typography variant="h3" style={{ fontWeight: 700 }}>
                   Our Mission
                 </Typography>
@@ -291,7 +208,6 @@ export default function Home() {
                   </Button>
                 </Link>
               </ThemeProvider>
-            </Paper>
           </Grid>
 
           <Grid item xs={12}>
@@ -303,13 +219,8 @@ export default function Home() {
             />
           </Grid>
 
-          <Grid item xs={12}>
-            <Paper
-              elevation={0}
-              className={classes.paper}
-              style={{ textAlign: "center" }}
-            >
-              <ThemeProvider theme={heebo}>
+          <Grid item xs={12} style={{ textAlign: "center"}}>
+              <ThemeProvider theme={lato}>
                 <Typography variant="h3" style={{ fontWeight: 700 }}>
                   Workshops
                 </Typography>
@@ -332,10 +243,9 @@ export default function Home() {
                   </Button>
                 </Link>
               </ThemeProvider>
-            </Paper>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ marginBottom: "0px"}}>
             <Image
               className={classes.art}
               src="/redrock.png"
@@ -344,7 +254,10 @@ export default function Home() {
             />
           </Grid>
 
-          <Footer />
+          <Grid item xs={12} style={{ margin: "0px"}}>
+            <Footer />
+          </Grid>
+
         </Grid>
       </ThemeProvider>
     </div>
